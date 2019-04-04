@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/dgrid.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="./css/dgrid.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ 
+</head>
+
+<body class="p-3"> 
+    <div id="div_gridA" class="table-responsive-md table-responsive-lg table-responsive-sm">
+        <div class="gridContent form-group col-md-12">
+            <table class="table table-striped table-hover " id="gridA">
+                <thead>
+
+
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+        <a id="btngridAAdd" style="font-weight:bold;left: 30px;position: relative;" class="btn btn-primary" title=""
+            href="javascript:return false;" role="button"> + </a>
+    </div>
+    <input type="hidden" name="gridA_value" id="gridA_value" />
+
+
+
+    <script type="text/javascript">
+        var gridA;
+
+        var colList = [{
+            name: "id",
+            key: 1,
+            width: "50px",
+            cssClass: "paper text_field"
+        },
+        {
+            name: "name",
+            cssClass: "form-control paper text_field"
+        },
+
+        {
+            name: "num",
+            cssClass: "form-control paper text_field",
+            type: "number"
+        },
+
+        {
+            name: "status",
+            displayText: "Status",
+            source: [{ text: "Active", value: 1 }, { text: "Inactive", value: 0 }],
+            width: "120px",
+            cssClass: "form-control paper text_field"
+        }];
+
+        var data = [{
+            id: 100,
+            name: "ItemA",
+            num: 2,
+            status: 1
+        }, {
+            id: 2,
+            name: "ItemB",
+            num: 99,
+            status: 0
+
+        }];
+        data = [];
+
+        $(document).ready(function () {
+
+            gridA = new DGrid("gridA");
+            gridA.Columns = colList;
+            gridA.data = data;
+            gridA.allowSorting = true;
+            gridA.load();
+
+
+            $("#btngridAAdd").on("click", function () {
+                gridA.AddNewRow();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

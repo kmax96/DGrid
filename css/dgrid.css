@@ -1,0 +1,10 @@
+.gridContent >table>tbody>tr>td > input {
+
+    padding-top: 12px;
+}
+
+#btnSearch
+{
+  color:white;
+  font-weight:bold;
+}
