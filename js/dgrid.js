@@ -492,7 +492,7 @@ function DGrid(id) {
                             colStr += "<a class=\"Cancel\" href=\"javascript:;\" style=\"display:none\" title=\"Cancel\" data-toggle=\"tooltip\"><i class=\"fa fa-ban\"></i></a>";
                         }
                         if (!this.disableDelete) {
-                            colStr += "<a class=\"Delete\" href=\"javascript:;\" title=\"@CommonContent.Delete\"><i class=\"fa fa-times\"></i></a>";
+                            colStr += "<a class=\"Delete\" href=\"javascript:;\" title=\"Delete\"><i class=\"fa fa-times\"></i></a>";
                         }
                     }
                     colStr += "</td>";
